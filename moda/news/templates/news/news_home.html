@@ -1,0 +1,23 @@
+{% extends 'main/base.html'%}
+
+{% block title %}Новости на сайте{% endblock %}
+{% block home %}Новости на сайте{% endblock %}
+
+{% block body %}
+    <div class="features">
+        <h1>Новости на сайте</h1>
+        <p>Сайт разработан при помощи Django, Botstrap</p>
+        <h1>Новости моды</h1>
+        {% if news %}
+            {% for i in news %}
+                <div class="alert alert-warning">
+                    <h3>{{ i.title }}</h3>
+                    <img src = {{ i.image }}>
+                    <p>{{ i.text }} </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей</p>
+        {% endif %}
+    </div>
+{% endblock %}

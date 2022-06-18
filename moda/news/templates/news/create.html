@@ -1,0 +1,21 @@
+{% extends 'main/base.html'%}
+
+{% block title %}Форма по добавлению статьи{% endblock %}
+{% block home %}Форма по дабавлению статьи{% endblock %}
+
+{% block body %}
+    <div class="features">
+        <h1>Форма по добавлению статьи</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.text }}<br>
+            {{ form.date }}<br>
+            {{ form.image }}<br>
+            <span {{ error }}></span>
+            <button class="btn btn-success" type="sumbit">Добавить запись</button>
+
+        </form>
+    </div>
+{% endblock %}
